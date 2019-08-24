@@ -1,0 +1,19 @@
+{
+	"name": "indo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"css-build": "node-sass --omit-source-map-url custom/style.scss themes/indo_theme/style.css",
+		"css-watch": "npm run css-build -- --watch",
+		"dev": "npm run css-watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"node-sass": "^4.12.0",
+		"bulma": "^0.7.5"
+	}
+}

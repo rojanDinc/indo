@@ -1,0 +1,105 @@
+/*
+Theme Name: Indo Theme
+Theme URI: https://www.rojandinc.se/
+Author: Rojan Dinc
+Author URI: https://www.rojandinc.se/
+Description: This theme was intentionally left blank. There are times when all you need is the WordPress dashboard and an blank frontend. You might be using the WordPress REST API as a backend for a mobile App or you might be a minimalism obsessed hipster. This is your theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, theme-options, translation-ready
+Text Domain: indo-theme
+*/
+@charset "utf-8";
+
+@font-face {
+	font-family: roboto-regular;
+	src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+$family-primary: roboto-regular;
+$primary: #00718d;
+$secondary: #07683a;
+
+// Footer
+$footer-background-color: $primary;
+$footer-padding: 3rem 15rem 6rem;
+
+// Space helpers
+$sizeUnit: rem;
+$marginKey: 'm';
+$paddingKey: 'p';
+$separator: '-';
+$sizes: (('0', 0), ('1', 0.125), ('2', 0.25), ('3', 0.5), ('4', 1), ('5', 2), ('6', 4), ('7', 8));
+$positions: (('t', 'top'), ('r', 'right'), ('b', 'bottom'), ('l', 'left'));
+
+@function sizeValue($key, $value) {
+	@return if($key == 'none', 0, $value + $sizeUnit);
+}
+
+@each $size in $sizes {
+	$sizeKey: nth($size, 1);
+	$sizeValue: nth($size, 2);
+	.#{$marginKey}#{$separator}#{$sizeKey} {
+		margin: sizeValue($sizeKey, $sizeValue);
+	}
+	.#{$paddingKey}#{$separator}#{$sizeKey} {
+		padding: sizeValue($sizeKey, $sizeValue);
+	}
+	@each $position in $positions {
+		$posKey: nth($position, 1);
+		$posValue: nth($position, 2);
+		.#{$marginKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+			margin-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+		}
+		.#{$paddingKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+			padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+		}
+	}
+}
+
+// Import only what you need from Bulma
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/container.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/form/_all.sass';
+@import '../node_modules/bulma/sass/components/navbar.sass';
+@import '../node_modules/bulma/sass/layout/footer.sass';
+@import '../node_modules/bulma/sass/grid/columns.sass';
+
+.navbar {
+	@extend .navbar;
+	height: 90px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.navbar-brand {
+	@extend .navbar-brand;
+	height: inherit;
+}
+.navbar-item {
+	@extend .navbar-item;
+	height: inherit;
+}
+.navbar-burger {
+	@extend .navbar-burger;
+	height: inherit;
+}
+
+.flex-column {
+	flex-direction: column !important;
+}
+
+.navbar-item {
+	@extend .navbar-item;
+	color: $primary;
+	font-weight: bold;
+}
+
+.flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.max-h-500 {
+	max-height: 500px;
+}
