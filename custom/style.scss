@@ -81,11 +81,26 @@ $positions: (('t', 'top'), ('r', 'right'), ('b', 'bottom'), ('l', 'left'));
 	@extend .navbar-item;
 	height: inherit;
 }
+a.navbar-item:hover {
+	@extend a.navbar-item:hover;
+	color: #333333 !important;
+}
 .navbar-burger {
 	@extend .navbar-burger;
 	height: inherit;
 }
-
+.footer-menu li a {
+	color: white;
+}
+.footer-menu li a:hover {
+	color: #333333;
+}
+// Medium devices (tablets, less than 992px)
+@media (max-width: 1199.98px) {
+	.footer {
+		padding: 80px 20px;
+	}
+}
 .flex-column {
 	flex-direction: column !important;
 }

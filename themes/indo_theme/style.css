@@ -4962,8 +4962,21 @@ a.navbar-item,
 .navbar-item {
   height: inherit; }
 
+a.navbar-item:hover {
+  color: #333333 !important; }
+
 .navbar-burger {
   height: inherit; }
+
+.footer-menu li a {
+  color: white; }
+
+.footer-menu li a:hover {
+  color: #333333; }
+
+@media (max-width: 1199.98px) {
+  .footer {
+    padding: 80px 20px; } }
 
 .flex-column {
   flex-direction: column !important; }
