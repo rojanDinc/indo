@@ -198,7 +198,7 @@ class textimg_widget extends WP_Widget {
 			</style>
 			<a>
 				<div id="container" class="columns <?= $image_pos == 'left' ? 'flex-row-reverse' : '' ?>">
-					<div class="column is-6 is-paddingless">
+					<div class="column is-paddingless">
 						<div class="content-box has-text-white light p-t-6 p-b-6 p-l-6 p-r-6">
 							<h1 class="is-1 has-text-weight-bold">
 								<?= $category_title ?>
@@ -210,7 +210,7 @@ class textimg_widget extends WP_Widget {
 							<p class="textimg_text"><?= $text ?></p>
 						</div>
 					</div>
-					<div class="column is-6 is-paddingless">
+					<div class="column is-6 is-paddingless is-hidden-mobile is-hidden-tablet-only">
 						<div id="image-container">
 							<div id="image"></div>
 						</div>
